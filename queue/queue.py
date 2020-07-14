@@ -26,7 +26,7 @@ Stretch: What if you could only use instances of your Stack class to implement t
 
 #     def enqueue(self, value):
 #         # Add value to the end of the storage
-#         self.storage.append(value)
+#         self.storage.append(value) # O(1)
 #         # Add 1 to the size of the Queue
 #         self.size += 1
 
@@ -35,13 +35,11 @@ Stretch: What if you could only use instances of your Stack class to implement t
 #         # If the Queue is empty
 #         if self.size == 0:
 #             return
-       
 #         else:
-#             # Remove the first element    
-#             dequeued = self.storage.pop(0)
 #             # Subtract 1 from the size of the storage
 #             self.size -= 1
-#             return dequeued
+#             # Remove the first element 
+#             return self.storage.pop(0) # O(n)
 
 
 import sys
@@ -60,7 +58,7 @@ class Queue:
 
     def enqueue(self, value):
         # Add value to the end of the storage
-        self.storage.add_to_tail(value)
+        self.storage.add_to_tail(value) # O(1)
         # Add 1 to the size of the Queue
         self.size += 1
 
@@ -71,11 +69,15 @@ class Queue:
             return
        
         else:
-            # Remove the first element    
-            dequeued = self.storage.remove_head()
             # Subtract 1 from the size of the storage
             self.size -= 1
-            return dequeued
+            # Remove the first element 
+            return self.storage.remove_head() # O(1)
+
+
+'''
+Runtimes are quicker with linked list
+'''
 
 '''
 Using a linked list vs using an array is very similar when implementing a Queue class.
