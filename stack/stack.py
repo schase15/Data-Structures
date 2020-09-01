@@ -21,24 +21,21 @@ return elements in Last In First Out order.
 
 #     # Return the size of the storage
 #     def __len__(self):
-#         return self.size
+#         return len(self.storage)
 
 #     # Add on a value to the end of the array
 #     # Modify self.size to be the length of the array
 #     def push(self, value):
 #         self.storage.append(value)
-#         self.size = len(self.storage)
 
 #     # Remove the last value from the array
 #     # Update the length of the array
 #     def pop(self):
 #         # If empty do nothing
-#         if self.size == 0:
+#         if len(self.storage) == 0:
 #             return None
 #         else:
-#             popped = self.storage.pop()
-#             self.size = len(self.storage)
-#             return popped
+#             return self.storage.pop()
 
 
 
@@ -86,6 +83,16 @@ class Stack:
         else:
             return
 
+
+'''
+For stacks you need to add and remove from the same side. It is cheaper to add and remove from the head O(1) for both.
+Removing from the tail is more expensive O(n)
+'''
+
+
+'''
+Runtimes are quicker with linked lists
+'''
 
 '''
 3. The biggest differences between implementing the stack class with an array vs with a linked list
